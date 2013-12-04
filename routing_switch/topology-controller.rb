@@ -132,7 +132,7 @@ p "destintion isn't resistered"
 		send_flow_mod_add(
 			dpid,
 			#1秒間使わなかったらflow_removerdが起こる
-      :idle_timeout => 10,
+      :hard_timeout => 10,
     	:match => Match.new(
 	              :nw_dst => msg.ipv4_daddr),
 			:actions => Trema::SendOutPort.new(port) )
